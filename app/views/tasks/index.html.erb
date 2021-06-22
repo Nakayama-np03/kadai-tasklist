@@ -2,8 +2,17 @@
 
 <ul>
     <% @tasks.each do |task| %>
-    <li><%= link_to task.id, task_path(task) %> 「 <%= task.content %> 」 <%= task.status %></li>
+    <li>[user=<%= task.user_id %>]  タスク番号:<%= link_to task.id, task_path(task) %> 「 <%= task.content %> 」 <%= task.status %></li>
     <% end %>
 </ul>
 
+
 <%= link_to 'タスクを追加', new_task_path %>
+
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
+      <h1>Welcome to the Tasklist</h1>
+      <%= link_to 'Sign up now!', signup_path %>
+
+<% end %>

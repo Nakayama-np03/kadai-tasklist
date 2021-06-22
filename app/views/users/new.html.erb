@@ -1,12 +1,10 @@
 <h1>Sign up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
 
 <%= form_with(model: @user, local: true) do |f| %>
-<%= render 'layouts/error_messages', model: f.object %>
+    <%= render 'layouts/error_messages', model: f.object %>
 
-<div>
-    <%= form_with(model: @user, local: true) do |f| %>
-  
+    <div>
+
         <div>
             <%= f.label :name, 'Name' %>
             <%= f.text_field :name %>
@@ -28,5 +26,5 @@
         </div>
 
         <%= f.submit 'Sign up' %>
-    <% end %>
-</div>
+    </div>
+<% end %>

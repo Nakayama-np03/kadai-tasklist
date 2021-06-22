@@ -10,4 +10,8 @@ def require_user_logged_in
     end
 end
 
+def count(user)
+  @count_tasks = user.tasks.count
+end
+
 end
